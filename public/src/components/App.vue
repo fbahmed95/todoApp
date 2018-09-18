@@ -14,6 +14,7 @@
 <script>
   import AddTodo from './AddTodo.vue';
   import ListAllTodo from './ListAllTodo.vue';
+  import moment from 'moment';
   export default {
     name: 'app',
     data() {
@@ -22,6 +23,11 @@
     components: {
       AddTodo,
       ListAllTodo
+    },
+    methods: {
+      moment: function () {
+        return moment();
+      }
     },
   }
 </script>

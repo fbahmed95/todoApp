@@ -1902,7 +1902,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(182)("./" + name);
+                __webpack_require__(181)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4574,7 +4574,7 @@
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(181)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(180)(module)))
 
 /***/ }),
 /* 1 */
@@ -5424,7 +5424,7 @@ module.exports = defaults;
 
 
 
-const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
+var bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
 /* harmony default export */ __webpack_exports__["a"] = (bus);
 
@@ -5432,13 +5432,19 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {/*!
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
  * Vue.js v2.4.4
  * (c) 2014-2017 Evan You
  * Released under the MIT License.
  */
 (function (global, factory) {
-   true ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : global.Vue = factory();
+  ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : global.Vue = factory();
 })(this, function () {
   'use strict';
 
@@ -5475,7 +5481,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
    * is a JSON-compliant type.
    */
   function isObject(obj) {
-    return obj !== null && typeof obj === 'object';
+    return obj !== null && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object';
   }
 
   var _toString = Object.prototype.toString;
@@ -5504,7 +5510,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
    * Convert a value to a string that is actually rendered.
    */
   function toString(val) {
-    return val == null ? '' : typeof val === 'object' ? JSON.stringify(val, null, 2) : String(val);
+    return val == null ? '' : (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' ? JSON.stringify(val, null, 2) : String(val);
   }
 
   /**
@@ -5658,14 +5664,14 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   /**
    * Always return false.
    */
-  var no = function (a, b, c) {
+  var no = function no(a, b, c) {
     return false;
   };
 
   /**
    * Return same value
    */
-  var identity = function (_) {
+  var identity = function identity(_) {
     return _;
   };
 
@@ -5886,13 +5892,13 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   {
     var hasConsole = typeof console !== 'undefined';
     var classifyRE = /(?:^|[-_])(\w)/g;
-    var classify = function (str) {
+    var classify = function classify(str) {
       return str.replace(classifyRE, function (c) {
         return c.toUpperCase();
       }).replace(/[-_]/g, '');
     };
 
-    warn = function (msg, vm) {
+    warn = function warn(msg, vm) {
       var trace = vm ? generateComponentTrace(vm) : '';
 
       if (config.warnHandler) {
@@ -5902,13 +5908,13 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       }
     };
 
-    tip = function (msg, vm) {
+    tip = function tip(msg, vm) {
       if (hasConsole && !config.silent) {
         console.warn("[Vue tip]: " + msg + (vm ? generateComponentTrace(vm) : ''));
       }
     };
 
-    formatComponentName = function (vm, includeFile) {
+    formatComponentName = function formatComponentName(vm, includeFile) {
       if (vm.$root === vm) {
         return '<Root>';
       }
@@ -5923,7 +5929,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       return (name ? "<" + classify(name) + ">" : "<Anonymous>") + (file && includeFile !== false ? " at " + file : '');
     };
 
-    var repeat = function (str, n) {
+    var repeat = function repeat(str, n) {
       var res = '';
       while (n) {
         if (n % 2 === 1) {
@@ -5937,7 +5943,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       return res;
     };
 
-    var generateComponentTrace = function (vm) {
+    var generateComponentTrace = function generateComponentTrace(vm) {
       if (vm._isVue && vm.$parent) {
         var tree = [];
         var currentRecursiveSequence = 0;
@@ -6019,7 +6025,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   // this needs to be lazy-evaled because vue may be required before
   // vue-server-renderer can set VUE_ENV
   var _isServer;
-  var isServerRendering = function () {
+  var isServerRendering = function isServerRendering() {
     if (_isServer === undefined) {
       /* istanbul ignore if */
       if (!inBrowser && typeof global !== 'undefined') {
@@ -6069,10 +6075,10 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     /* istanbul ignore if */
     if (typeof Promise !== 'undefined' && isNative(Promise)) {
       var p = Promise.resolve();
-      var logError = function (err) {
+      var logError = function logError(err) {
         console.error(err);
       };
-      timerFunc = function () {
+      timerFunc = function timerFunc() {
         p.then(nextTickHandler).catch(logError);
         // in problematic UIWebViews, Promise.then doesn't completely break, but
         // it can get stuck in a weird state where callbacks are pushed into the
@@ -6094,14 +6100,14 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       observer.observe(textNode, {
         characterData: true
       });
-      timerFunc = function () {
+      timerFunc = function timerFunc() {
         counter = (counter + 1) % 2;
         textNode.data = String(counter);
       };
     } else {
       // fallback to setTimeout
       /* istanbul ignore next */
-      timerFunc = function () {
+      timerFunc = function timerFunc() {
         setTimeout(nextTickHandler, 0);
       };
     }
@@ -6220,9 +6226,9 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     def(arrayMethods, method, function mutator() {
       var args = [],
           len = arguments.length;
-      while (len--) args[len] = arguments[len];
-
-      var result = original.apply(this, args);
+      while (len--) {
+        args[len] = arguments[len];
+      }var result = original.apply(this, args);
       var ob = this.__ob__;
       var inserted;
       switch (method) {
@@ -6632,7 +6638,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   /**
    * Default strategy.
    */
-  var defaultStrat = function (parentVal, childVal) {
+  var defaultStrat = function defaultStrat(parentVal, childVal) {
     return childVal === undefined ? parentVal : childVal;
   };
 
@@ -6876,7 +6882,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     var valid;
     var expectedType = getType(type);
     if (simpleCheckRE.test(expectedType)) {
-      var t = typeof value;
+      var t = typeof value === 'undefined' ? 'undefined' : _typeof(value);
       valid = t === expectedType.toLowerCase();
       // for primitive wrapper objects
       if (!valid && t === 'object') {
@@ -6927,10 +6933,10 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     var perf = inBrowser && window.performance;
     /* istanbul ignore if */
     if (perf && perf.mark && perf.measure && perf.clearMarks && perf.clearMeasures) {
-      mark = function (tag) {
+      mark = function mark(tag) {
         return perf.mark(tag);
       };
-      measure = function (name, startTag, endTag) {
+      measure = function measure(name, startTag, endTag) {
         perf.measure(name, startTag, endTag);
         perf.clearMarks(startTag);
         perf.clearMarks(endTag);
@@ -6947,7 +6953,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     var allowedGlobals = makeMap('Infinity,undefined,NaN,isFinite,isNaN,' + 'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' + 'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' + 'require' // for Webpack/Browserify
     );
 
-    var warnNonPresent = function (target, key) {
+    var warnNonPresent = function warnNonPresent(target, key) {
       warn("Property or method \"" + key + "\" is not defined on the instance but " + "referenced during render. Make sure to declare reactive data " + "properties in the data option.", target);
     };
 
@@ -7036,7 +7042,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   Object.defineProperties(VNode.prototype, prototypeAccessors);
 
-  var createEmptyVNode = function (text) {
+  var createEmptyVNode = function createEmptyVNode(text) {
     if (text === void 0) text = '';
 
     var node = new VNode();
@@ -7347,7 +7353,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       var contexts = factory.contexts = [context];
       var sync = true;
 
-      var forceRender = function () {
+      var forceRender = function forceRender() {
         for (var i = 0, l = contexts.length; i < l; i++) {
           contexts[i].$forceUpdate();
         }
@@ -7756,7 +7762,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     var updateComponent;
     /* istanbul ignore if */
     if ("development" !== 'production' && config.performance && mark) {
-      updateComponent = function () {
+      updateComponent = function updateComponent() {
         var name = vm._name;
         var id = vm._uid;
         var startTag = "vue-perf-start:" + id;
@@ -7773,7 +7779,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
         measure(name + " patch", startTag, endTag);
       };
     } else {
-      updateComponent = function () {
+      updateComponent = function updateComponent() {
         vm._update(vm._render(), hydrating);
       };
     }
@@ -8329,7 +8335,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     var isRoot = !vm.$parent;
     // root instance props should be converted
     observerState.shouldConvert = isRoot;
-    var loop = function (key) {
+    var loop = function loop(key) {
       keys.push(key);
       var value = validateProp(key, propsOptions, propsData, vm);
       /* istanbul ignore else */
@@ -8351,8 +8357,9 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       }
     };
 
-    for (var key in propsOptions) loop(key);
-    observerState.shouldConvert = true;
+    for (var key in propsOptions) {
+      loop(key);
+    }observerState.shouldConvert = true;
   }
 
   function initData(vm) {
@@ -8620,7 +8627,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     // ensure the createElement function in functional components
     // gets a unique context - this is necessary for correct named slot check
     var _context = Object.create(context);
-    var h = function (a, b, c, d) {
+    var h = function h(a, b, c, d) {
       return createElement(_context, a, b, c, d, true);
     };
     var vnode = Ctor.options.render.call(null, h, {
@@ -8630,7 +8637,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       parent: context,
       listeners: data.on || emptyObject,
       injections: resolveInject(Ctor.options.inject, context),
-      slots: function () {
+      slots: function slots() {
         return resolveSlots(children, context);
       }
     });
@@ -9033,7 +9040,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
           value = toObject(value);
         }
         var hash;
-        var loop = function (key) {
+        var loop = function loop(key) {
           if (key === 'class' || key === 'style' || isReservedAttribute(key)) {
             hash = data;
           } else {
@@ -9052,7 +9059,9 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
           }
         };
 
-        for (var key in value) loop(key);
+        for (var key in value) {
+          loop(key);
+        }
       }
     }
     return data;
@@ -9705,7 +9714,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   // attributes that should be using props for binding
   var acceptValue = makeMap('input,textarea,option,select,progress');
-  var mustUseProp = function (tag, type, attr) {
+  var mustUseProp = function mustUseProp(tag, type, attr) {
     return attr === 'value' && acceptValue(tag) && type !== 'button' || attr === 'selected' && tag === 'option' || attr === 'checked' && tag === 'input' || attr === 'muted' && tag === 'video';
   };
 
@@ -9715,15 +9724,15 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   var xlinkNS = 'http://www.w3.org/1999/xlink';
 
-  var isXlink = function (name) {
+  var isXlink = function isXlink(name) {
     return name.charAt(5) === ':' && name.slice(0, 5) === 'xlink';
   };
 
-  var getXlinkProp = function (name) {
+  var getXlinkProp = function getXlinkProp(name) {
     return isXlink(name) ? name.slice(6, name.length) : '';
   };
 
-  var isFalsyAttrValue = function (val) {
+  var isFalsyAttrValue = function isFalsyAttrValue(val) {
     return val == null || val === false;
   };
 
@@ -9820,11 +9829,11 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   // contain child elements.
   var isSVG = makeMap('svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,' + 'foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' + 'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view', true);
 
-  var isPreTag = function (tag) {
+  var isPreTag = function isPreTag(tag) {
     return tag === 'pre';
   };
 
-  var isReservedTag = function (tag) {
+  var isReservedTag = function isReservedTag(tag) {
     return isHTMLTag(tag) || isSVG(tag);
   };
 
@@ -10711,7 +10720,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     }
 
     if (dirsWithInsert.length) {
-      var callInsert = function () {
+      var callInsert = function callInsert() {
         for (var i = 0; i < dirsWithInsert.length; i++) {
           callHook$1(dirsWithInsert[i], 'inserted', vnode, oldVnode);
         }
@@ -11353,18 +11362,18 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   var target$1;
 
-  function add$1(event, handler, once$$1, capture, passive) {
+  function add$1(event, _handler, once$$1, capture, passive) {
     if (once$$1) {
-      var oldHandler = handler;
+      var oldHandler = _handler;
       var _target = target$1; // save current target element in closure
-      handler = function (ev) {
+      _handler = function handler(ev) {
         var res = arguments.length === 1 ? oldHandler(ev) : oldHandler.apply(null, arguments);
         if (res !== null) {
-          remove$2(event, handler, capture, _target);
+          remove$2(event, _handler, capture, _target);
         }
       };
     }
-    target$1.addEventListener(event, handler, supportsPassive ? { capture: capture, passive: passive } : capture);
+    target$1.addEventListener(event, _handler, supportsPassive ? { capture: capture, passive: passive } : capture);
   }
 
   function remove$2(event, handler, capture, _target) {
@@ -11541,7 +11550,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   var cssVarRE = /^--/;
   var importantRE = /\s*!important$/;
-  var setProp = function (el, name, val) {
+  var setProp = function setProp(el, name, val) {
     /* istanbul ignore if */
     if (cssVarRE.test(name)) {
       el.style.setProperty(name, val);
@@ -11697,7 +11706,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
       return;
     }
     /* istanbul ignore else */
-    if (typeof def$$1 === 'object') {
+    if ((typeof def$$1 === 'undefined' ? 'undefined' : _typeof(def$$1)) === 'object') {
       var res = {};
       if (def$$1.css !== false) {
         extend(res, autoCssTransition(def$$1.name || 'v'));
@@ -11775,11 +11784,11 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
     }
     var event = type === TRANSITION ? transitionEndEvent : animationEndEvent;
     var ended = 0;
-    var end = function () {
+    var end = function end() {
       el.removeEventListener(event, onEnd);
       cb();
     };
-    var onEnd = function (e) {
+    var onEnd = function onEnd(e) {
       if (e.target === el) {
         if (++ended >= propCount) {
           end();
@@ -12494,7 +12503,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
             return oldRawChild;
           }
           var delayedLeave;
-          var performLeave = function () {
+          var performLeave = function performLeave() {
             delayedLeave();
           };
           mergeVNodeHook(data, 'afterEnter', performLeave);
@@ -12950,7 +12959,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
   // #5992
   var isIgnoreNewlineTag = makeMap('pre,textarea', true);
-  var shouldIgnoreFirstNewline = function (tag, html) {
+  var shouldIgnoreFirstNewline = function shouldIgnoreFirstNewline(tag, html) {
     return tag && isIgnoreNewlineTag(tag) && html[0] === '\n';
   };
 
@@ -13887,7 +13896,7 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
   // #4868: modifiers that prevent the execution of the listener
   // need to explicitly return null so that we can determine whether to remove
   // the listener for .once
-  var genGuard = function (condition) {
+  var genGuard = function genGuard(condition) {
     return "if(" + condition + ")return null;";
   };
 
@@ -14697,6 +14706,8 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AddTodo_vue__ = __webpack_require__(150);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListAllTodo_vue__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 //
 //
 //
@@ -14710,17 +14721,24 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 //
 //
 //
+
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'app',
-  data() {
+  data: function data() {
     return {};
   },
+
   components: {
     AddTodo: __WEBPACK_IMPORTED_MODULE_0__AddTodo_vue__["a" /* default */],
     ListAllTodo: __WEBPACK_IMPORTED_MODULE_1__ListAllTodo_vue__["a" /* default */]
+  },
+  methods: {
+    moment: function moment() {
+      return __WEBPACK_IMPORTED_MODULE_2_moment___default()();
+    }
   }
 });
 
@@ -14747,31 +14765,34 @@ const bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  data() {
+  data: function data() {
     return {
       inputVal: ''
     };
   },
+
   methods: {
-    addTodo(event) {
+    addTodo: function addTodo(event) {
+      var _this = this;
+
       if (event) event.preventDefault();
-      let url = 'http://localhost:3000/todos';
-      let param = {
+      var url = 'http://localhost:3000/todos';
+      var param = {
         description: this.inputVal,
         done: 0
       };
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(url, param).then(response => {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(url, param).then(function (response) {
         console.log(response);
-        this.refreshTodo();
-        this.clearTodo();
-      }).catch(error => {
+        _this.refreshTodo();
+        _this.clearTodo();
+      }).catch(function (error) {
         console.log(error);
       });
     },
-    clearTodo() {
+    clearTodo: function clearTodo() {
       this.inputVal = '';
     },
-    refreshTodo() {
+    refreshTodo: function refreshTodo() {
       __WEBPACK_IMPORTED_MODULE_1__bus_js__["a" /* default */].$emit("refreshTodo");
     }
   }
@@ -15269,28 +15290,33 @@ module.exports = Cancel;
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-    data() {
+    data: function data() {
         return {
             todos: []
         };
     },
-    created: function () {
+
+    created: function created() {
         this.fetchTodo();
         this.listenToEvents();
     },
     methods: {
-        fetchTodo() {
-            let uri = 'http://localhost:3000/todos';
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(uri).then(response => {
-                this.todos = response.data;
+        fetchTodo: function fetchTodo() {
+            var _this = this;
+
+            var uri = 'http://localhost:3000/todos';
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(uri).then(function (response) {
+                _this.todos = response.data;
             });
         },
-        refreshTodo() {
+        refreshTodo: function refreshTodo() {
             __WEBPACK_IMPORTED_MODULE_2__bus_js__["a" /* default */].$emit("refreshTodo");
         },
-        listenToEvents() {
-            __WEBPACK_IMPORTED_MODULE_2__bus_js__["a" /* default */].$on('refreshTodo', $event => {
-                this.fetchTodo(); //update todo
+        listenToEvents: function listenToEvents() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2__bus_js__["a" /* default */].$on('refreshTodo', function ($event) {
+                _this2.fetchTodo(); //update todo
             });
         }
     },
@@ -15328,34 +15354,36 @@ module.exports = Cancel;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   props: ['todo'],
-  data() {
+  data: function data() {
     return {};
   },
-  created: function () {},
+
+  created: function created() {},
   methods: {
-    updateTodo(todo) {
-      let id = todo.id;
-      let uri = 'http://localhost:3000/todos/' + id;
+    updateTodo: function updateTodo(todo) {
+      var _this = this;
+
+      var id = todo.id;
+      var uri = 'http://localhost:3000/todos/' + id;
       console.log(uri);
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put(uri, todo).then(response => {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put(uri, todo).then(function (response) {
         console.log("did it!");
-        this.refreshTodo();
-      }).catch(error => {
+        _this.refreshTodo();
+      }).catch(function (error) {
         console.log(error);
       });
     },
-    deleteTodo(id) {
+    deleteTodo: function deleteTodo(id) {
 
-      let uri = 'http://localhost:3000/todos/' + id;
+      var uri = 'http://localhost:3000/todos/' + id;
       console.log(uri);
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete(uri);
 
       this.refreshTodo();
     },
-    refreshTodo() {
+    refreshTodo: function refreshTodo() {
       __WEBPACK_IMPORTED_MODULE_1__bus_js__["a" /* default */].$emit("refreshTodo");
     }
-
   }
 });
 
@@ -27215,23 +27243,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_dist_css_bootstrap_min_css__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_dist_css_bootstrap_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_bootstrap_dist_css_bootstrap_min_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App_vue__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
 
 
 
 
 
 
+// import moment from 'moment'
+// //
+// // // used for date
+// Vue.prototype.moment = moment
 
-
-// used for date
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.moment = __WEBPACK_IMPORTED_MODULE_3_moment___default.a;
-
+// Vue.use(require('vue-moment'));
 // creating app...
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: 'app',
-  created: function () {
+  created: function created() {
     console.log('created');
   },
   components: { App: __WEBPACK_IMPORTED_MODULE_2__components_App_vue__["a" /* default */] },
@@ -27345,7 +27372,7 @@ module.exports = function listToStyles (parentId, list) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(9);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_93a7bb4a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_93a7bb4a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(182);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -28837,43 +28864,6 @@ if (false) {
 
 /***/ }),
 /* 180 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "app" } }, [
-    _c(
-      "div",
-      { staticClass: "todo-container" },
-      [
-        _c("span", { attrs: { id: "date-container" } }, [
-          _vm._v(_vm._s(_vm.moment(_vm.date).format("MM/DD/YYYY")))
-        ]),
-        _vm._v(" "),
-        _c("list-all-todo"),
-        _vm._v(" "),
-        _c("add-todo")
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-93a7bb4a", esExports)
-  }
-}
-
-/***/ }),
-/* 181 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -28901,7 +28891,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 182 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -29166,7 +29156,44 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 182;
+webpackContext.id = 181;
+
+/***/ }),
+/* 182 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "app" } }, [
+    _c(
+      "div",
+      { staticClass: "todo-container" },
+      [
+        _c("span", { attrs: { id: "date-container" } }, [
+          _vm._v(_vm._s(_vm.moment(_vm.date).format("MM/DD/YYYY")))
+        ]),
+        _vm._v(" "),
+        _c("list-all-todo"),
+        _vm._v(" "),
+        _c("add-todo")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-93a7bb4a", esExports)
+  }
+}
 
 /***/ })
 /******/ ]);
