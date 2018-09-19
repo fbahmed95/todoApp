@@ -1,9 +1,9 @@
 <template>
   <div id="form-container">
     <form class="form">
-      <input type="text" class="input form__input" placeholder="enter todo" v-model="inputVal"/>
+      <input type="text" class="input" placeholder="enter todo" v-model="inputVal"/>
       <!-- POST request to add a todo item -->
-      <button class="btn form__submit-btn" type="submit" v-on:click="addTodo($event)">Add</button>
+      <button class="btn" type="submit" v-on:click="addTodo($event)">Add</button>
     </form>
   </div>
 </template>

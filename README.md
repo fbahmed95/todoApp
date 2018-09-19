@@ -1,23 +1,57 @@
-To start, make sure you have your Postgres server up. In the command line, type
+# Todo App
+
+A simple todo app made with Express, Postgres, and Vue.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+You'll need Postgres & npm & Homebrew to get started. This guide assumes that you already have npm & Homebrew installed. If you don't have Postgres, you'll need Homebrew to install it:
+
+```
+brew update
+brew install postgres
+```
+Before getting the app up and running, make sure you have a todosdb and a todostestdb:
+
+```
 createdb todosdb
-psql todosdb
-CREATE USER node_user WITH SUPERUSER
-^D
-We're going to configure the database by throwing out old data and populating with new data.
-First we need to give write capabilities to the configure bash script. In the command line,
-type:
+createdb todostestdb
+```
+
+There is a configuredb.sh file that needs write permissions given to it before it can be run:
+
+```
 chmod +x ./app/bin/configuredb.sh
+```
 
-Now we can configure the database. Run:
+### Installing
 
+To get the app up and running, first configure the database. The bash file basically throws out old data and repopulates the database with some dummy data:
+
+```
 npm run configure
+```
 
-Now we can officially start the app! Yay! Run:
+Then, install all dependencies:
 
+```
+npm run install
+```
+
+Now you can officially run the app!
+
+```
 npm run start
+```
 
-And checkout localhost:3000
+If everything went well, you should be able to head over to localhost:3000 and see the app running there.
 
-To run the test suite:
+## Running the tests
 
+To run the tests, run:
+```
 npm run test
+```

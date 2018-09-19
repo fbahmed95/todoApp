@@ -2,7 +2,7 @@
     <div>
         <!-- Show all todo items by looping through all of the todos-->
         <div class="todolist-container" v-show="todos.length>0">
-            <div class="" v-for="todo in todos">
+            <div v-for="todo in todos">
             <!-- Render a single todo component and bind the current todo object to it -->
               <todo-item v-bind:todo="todo"></todo-item>
             </div>

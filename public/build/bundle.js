@@ -28436,7 +28436,7 @@ var render = function() {
             expression: "inputVal"
           }
         ],
-        staticClass: "input form__input",
+        staticClass: "input",
         attrs: { type: "text", placeholder: "enter todo" },
         domProps: { value: _vm.inputVal },
         on: {
@@ -28452,7 +28452,7 @@ var render = function() {
       _c(
         "button",
         {
-          staticClass: "btn form__submit-btn",
+          staticClass: "btn",
           attrs: { type: "submit" },
           on: {
             click: function($event) {
@@ -28809,7 +28809,7 @@ var render = function() {
         staticClass: "todolist-container"
       },
       _vm._l(_vm.todos, function(todo) {
-        return _c("div", {}, [_c("todo-item", { attrs: { todo: todo } })], 1)
+        return _c("div", [_c("todo-item", { attrs: { todo: todo } })], 1)
       })
     ),
     _vm._v(" "),
