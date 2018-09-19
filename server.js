@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const todos = require('./app/routes/todos');
-// const pool = require('./app/db');
 var path = require('path');
 
 let environment = process.env.NODE_ENV || 'development';

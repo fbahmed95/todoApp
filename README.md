@@ -23,7 +23,7 @@ brew install postgres
 brew services start postgresql
 ```
 
-#### Once you have Postgres 
+#### Once you have Postgres
 Before getting the app up and running, make sure you have a todosdb and a todostestdb:
 
 ```
@@ -66,4 +66,4 @@ To run the tests, run:
 ```
 npm run test
 ```
-The above command will reconfigure the test database as well as run the test script.
+Note: the above command will reconfigure the test database as well as run the test script.

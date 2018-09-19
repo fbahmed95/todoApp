@@ -5,6 +5,7 @@ let environment = process.env.NODE_ENV || 'development';
 if(environment == 'test'){
    pool = require('../tests/test_server/db');
 }
+
 // router is almost like a mini express app
 // used to group similar routes together
 const router = Router();
