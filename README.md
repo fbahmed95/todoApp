@@ -8,6 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+### For Linux / Windows
+Here are some helpful links:
+http://www.postgresqltutorial.com/install-postgresql/
+and
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
+
 #### For Mac OS
 You'll need Postgres & npm & Homebrew to get started. This guide assumes that you already have npm & Homebrew installed. If you don't have Postgres, you'll need Homebrew to install it:
 
@@ -17,11 +23,7 @@ brew install postgres
 brew services start postgresql
 ```
 
-### For Linux / Windows
-Here are some helpful links:
-http://www.postgresqltutorial.com/install-postgresql/
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
-
+### Once you have Postgres 
 Before getting the app up and running, make sure you have a todosdb and a todostestdb:
 
 ```
