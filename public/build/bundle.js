@@ -14782,12 +14782,11 @@ var bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
         done: 0
       };
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(url, param).then(function (response) {
-        console.log(response);
         _this.refreshTodo();
-        _this.clearTodo();
       }).catch(function (error) {
         console.log(error);
       });
+      this.clearTodo();
     },
     clearTodo: function clearTodo() {
       this.inputVal = '';
@@ -15365,9 +15364,7 @@ module.exports = Cancel;
 
       var id = todo.id;
       var uri = 'http://localhost:3000/todos/' + id;
-      console.log(uri);
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.put(uri, todo).then(function (response) {
-        console.log("did it!");
         _this.refreshTodo();
       }).catch(function (error) {
         console.log(error);
@@ -27249,12 +27246,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// import moment from 'moment'
-// //
-// // // used for date
-// Vue.prototype.moment = moment
-
-// Vue.use(require('vue-moment'));
 // creating app...
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: 'app',

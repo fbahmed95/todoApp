@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const pool = require('../db');
+const pool = require('./db');
 // router is almost like a mini express app
 // used to group similar routes together
 const router = Router();
@@ -10,7 +10,7 @@ router.get('/', (request, response, next) => {
     //using the error handling middleware
     //next looks for the 'next' middleware that corresponds to the function args
     if(err) return next(err);
-    response.json(res.rows);
+    response.end('got data');
   });
 });
 
@@ -22,7 +22,7 @@ router.get('/:id', (request, response, next) => {
   pool.query('SELECT * FROM todos WHERE id = $1', [id], (err, res) => {
     if(err) return next(err);
 
-    response.json(res.rows);
+    response.end('got data');
   })
 });
 

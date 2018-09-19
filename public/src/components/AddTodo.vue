@@ -27,12 +27,12 @@ import bus from "./../bus.js";
           done: 0
           };
         axios.post(url, param).then((response) => {
-          console.log(response);
           this.refreshTodo();
-          this.clearTodo();
         }).catch((error) => {
           console.log(error);
         })
+        this.clearTodo();
+
       },
       clearTodo() {
         this.inputVal = '';

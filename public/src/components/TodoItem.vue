@@ -29,9 +29,7 @@
           updateTodo(todo) {
             let id = todo.id;
             let uri = 'http://localhost:3000/todos/' + id;
-            console.log(uri);
             axios.put(uri, todo).then((response) => {
-              console.log("did it!");
               this.refreshTodo();
             }).catch((error) => {
                 console.log(error);
@@ -73,7 +71,6 @@
   border-bottom: solid;
   border-color: #aea4e3;
   border-width: thin;
-
 }
 .todo-checkbox {
   margin-right: 10px;
