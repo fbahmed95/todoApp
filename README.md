@@ -39,7 +39,7 @@ npm run configure
 Then, install all dependencies:
 
 ```
-npm run install
+npm install
 ```
 
 Now you can officially run the app!
