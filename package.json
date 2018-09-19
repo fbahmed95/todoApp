@@ -5,7 +5,7 @@
     "main": "server.js",
     "author": "Samuel James",
     "scripts": {
-        "test": "npm run configure-test && jest",
+        "test": "npm run configure-test && cross-env NODE_ENV=test jest",
         "configure-test": "./app/tests/test_server/configuretestdb.sh",
         "configure": "./app/bin/configuredb.sh",
         "start": "npm run build && node ./server.js",
@@ -34,7 +34,7 @@
         "babel-loader": "^7.1.5",
         "babel-preset-env": "^1.6.0",
         "babel-preset-stage-3": "^6.24.1",
-        "cross-env": "^5.0.5",
+        "cross-env": "^5.2.0",
         "css-loader": "^0.28.7",
         "file-loader": "^1.1.4",
         "flush-promises": "^1.0.0",

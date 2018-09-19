@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from './test_server/test-server';
-
+// import app from './test_server/test-server';
+import app from '../../server.js'
 const todo = {"description": "new", "done": false};
 const todoput = {"description": "check put req", "done": false};
 

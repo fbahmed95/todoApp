@@ -5,6 +5,7 @@ const todos = require('./todos');
 const pool = require('./db');
 var path = require('path');
 
+console.log(process.env.NODE_ENV);
 // Sends static files  from the public path directory
 app.use(express.static(path.join(__dirname, '/public')))
 

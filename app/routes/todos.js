@@ -1,5 +1,10 @@
 const { Router } = require('express');
-const pool = require('../db');
+let pool = require('../db');
+let environment = process.env.NODE_ENV || 'development';
+
+if(environment == 'test'){
+   pool = require('../tests/test_server/db');
+}
 // router is almost like a mini express app
 // used to group similar routes together
 const router = Router();
@@ -10,7 +15,8 @@ router.get('/', (request, response, next) => {
     //using the error handling middleware
     //next looks for the 'next' middleware that corresponds to the function args
     if(err) return next(err);
-    response.json(res.rows);
+    response.send((res.rows));
+
   });
 });
 
@@ -22,7 +28,7 @@ router.get('/:id', (request, response, next) => {
   pool.query('SELECT * FROM todos WHERE id = $1', [id], (err, res) => {
     if(err) return next(err);
 
-    response.json(res.rows);
+    response.send((res.rows));
   })
 });
 
@@ -39,7 +45,7 @@ router.post('/', (request, response, next) => {
 
       // use bodyParser to parse POSTed data
       // redirect to GET
-      response.redirect('/todos');
+      response.end('finished');
     }
   );
 });
@@ -56,7 +62,7 @@ router.put('/:id', (request, response, next) => {
     [description, done, id],
     (err, res) => {
       if(err) return next(err);
-      response.end('updated data');
+      response.end('finished');
     }
   );
 });
@@ -70,7 +76,7 @@ router.delete('/:id', (request, response, next) => {
     [id],
     (err, res) => {
       if(err) return next(err);
-      response.end('deleted');
+      response.redirect('/todos');
     }
   );
 

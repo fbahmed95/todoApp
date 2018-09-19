@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-### For Linux / Windows
+#### For Linux / Windows
 Here are some helpful links:
 http://www.postgresqltutorial.com/install-postgresql/
 and
@@ -23,7 +23,7 @@ brew install postgres
 brew services start postgresql
 ```
 
-### Once you have Postgres 
+#### Once you have Postgres 
 Before getting the app up and running, make sure you have a todosdb and a todostestdb:
 
 ```
