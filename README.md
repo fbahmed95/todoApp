@@ -38,6 +38,21 @@ chmod +x ./app/bin/configuredb.sh
 chmod +x ./app/tests/test_server/configuretestdb.sh
 ```
 
+The todos database configuration is as follows:
+```
+module.exports = {
+  user: '',
+  host: 'localhost',
+  database: 'todosdb',
+  password: '',
+  port: 5432
+};
+```
+
+The config file can be found in ./app/secrets/db_configuration.js and modified there. The todostestdb database config is similar and can be found in ./app/tests/test_server/db_configuration_test.js
+
+
+
 ### Installing
 
 To get the app up and running, first configure the database. The bash file basically throws out old data and repopulates the database with some dummy data:
