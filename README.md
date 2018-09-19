@@ -31,7 +31,7 @@ createdb todosdb
 createdb todostestdb
 ```
 
-There is a configuredb.sh file and a configuretestdb.sh file that need write permissions given to it before it can be run:
+There is a configuredb.sh file and a configuretestdb.sh file that need write permissions given to it before they can be run:
 
 ```
 chmod +x ./app/bin/configuredb.sh
