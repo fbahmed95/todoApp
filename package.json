@@ -5,7 +5,8 @@
     "main": "server.js",
     "author": "Samuel James",
     "scripts": {
-        "test": "jest",
+        "test": "npm run configure-test && jest",
+        "configure-test": "./app/tests/test_server/configuretestdb.sh",
         "configure": "./app/bin/configuredb.sh",
         "start": "npm run build && node ./server.js",
         "dev": "npm run build && nodemon ./server.js",

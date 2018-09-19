@@ -8,6 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+#### For Mac OS 
 You'll need Postgres & npm & Homebrew to get started. This guide assumes that you already have npm & Homebrew installed. If you don't have Postgres, you'll need Homebrew to install it:
 
 ```
@@ -22,10 +23,11 @@ createdb todosdb
 createdb todostestdb
 ```
 
-There is a configuredb.sh file that needs write permissions given to it before it can be run:
+There is a configuredb.sh file and a configuretestdb.sh file that need write permissions given to it before it can be run:
 
 ```
 chmod +x ./app/bin/configuredb.sh
+chmod +x ./app/tests/test_server/configuretestdb.sh
 ```
 
 ### Installing
@@ -56,3 +58,4 @@ To run the tests, run:
 ```
 npm run test
 ```
+The above command will reconfigure the test database as well as run the test script.
