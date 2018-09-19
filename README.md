@@ -13,6 +13,7 @@ You'll need Postgres & npm & Homebrew to get started. This guide assumes that yo
 ```
 brew update
 brew install postgres
+brew services start postgresql
 ```
 Before getting the app up and running, make sure you have a todosdb and a todostestdb:
 
