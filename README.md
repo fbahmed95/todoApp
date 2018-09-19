@@ -24,6 +24,8 @@ brew services start postgresql
 ```
 
 #### Once you have Postgres
+Make sure Postgres is running on port 5432.
+
 Before getting the app up and running, make sure you have a todosdb and a todostestdb:
 
 ```
