@@ -1,6 +1,10 @@
 <template>
 
   <div class="todo-item-input-group">
+    <a v-on:click="(todo.important = !todo.important), updateTodo(todo)">
+                <template v-if="todo.important"><font-awesome-icon :icon="['fas', 'star']" class="important"/></template>
+                <template v-else><font-awesome-icon :icon="['far', 'star']" class="important"/></template>
+    </a>
     <form class="todo-item-form">
     <!-- PUT request for changing whether a todo item is done -->
     <input type="checkbox" class="todo-checkbox" v-model="todo.done" :checked="todo.done" :value="todo.done" v-on:change="updateTodo(todo)" title="Mark as done?"/>
@@ -27,6 +31,7 @@
         },
         methods: {
           updateTodo(todo) {
+            console.log(todo);
             let id = todo.id;
             let uri = 'http://localhost:3000/todos/' + id;
             axios.put(uri, todo).then((response) => {
@@ -77,5 +82,12 @@
 }
 .round-btn{
   border-radius: 50%;
+}
+.important{
+margin-right: 10px;
+}
+.important:hover{
+  color: #ffca1c;
+  cursor: pointer;
 }
 </style>

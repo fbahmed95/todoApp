@@ -14,6 +14,10 @@
                 <br/>
                 You do not have any todo items</p>
         </div>
+        <!-- Filter todoItems -->
+        <button class="btn important-btn" v-on:click="(important = !important), fetchTodo()">
+                {{important ? 'show all' : 'show important only'}}
+        </button>
     </div>
 </template>
 
@@ -24,7 +28,8 @@
     export default {
         data() {
             return {
-                todos: []
+                todos: [],
+                important: false
             }
         },
         created: function () {
@@ -34,8 +39,19 @@
         methods: {
             fetchTodo() {
                 let uri = 'http://localhost:3000/todos';
+                var that = this;
                 axios.get(uri).then((response) => {
-                    this.todos = response.data;
+                    console.log(response.data);
+                    if(this.important == true){
+                      that.todos = [];
+                      response.data.forEach(function(todo){
+                        if(todo.important == true){
+                          that.todos.push(todo);
+                        }
+                      });
+                    } else {
+                      this.todos = response.data;
+                    }
                 });
             },
             refreshTodo() {
@@ -60,5 +76,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  }
+  .important-btn{
+  margin: auto;
+  margin-top: 10px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
   }
 </style>

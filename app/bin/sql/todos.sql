@@ -1,11 +1,12 @@
 CREATE TABLE todos(
   id serial,
   description VARCHAR (255),
-  done BOOLEAN
+  done BOOLEAN,
+  important BOOLEAN
 );
 
-INSERT INTO todos(description, done)
+INSERT INTO todos(description, done, important)
 VALUES
-('Buy books', false),
-('Drink coffee', false),
-('Be awesome', true);
+('Buy books', false, true),
+('Drink coffee', false, false),
+('Be awesome', true, false);

@@ -35,11 +35,11 @@ router.get('/:id', (request, response, next) => {
 // adding more todos
 // data is passed in the body of request
 router.post('/', (request, response, next) => {
-  const { description, done } = request.body;
+  const { description, done, important } = request.body;
 
   pool.query(
-    'INSERT INTO todos(description, done) VALUES($1, $2)',
-    [description, done],
+    'INSERT INTO todos(description, done, important) VALUES($1, $2, $3)',
+    [description, done, important],
     (err, res) => {
       if(err) return next(err);
 
@@ -55,11 +55,11 @@ router.post('/', (request, response, next) => {
 //MUST be sent all columns in table (description, done)
 router.put('/:id', (request, response, next) => {
   const { id } = request.params;
-  const { description, done } = request.body;
+  const { description, done, important } = request.body;
 
   pool.query(
-    'UPDATE todos SET description=($1), done=($2) WHERE id=($3)',
-    [description, done, id],
+    'UPDATE todos SET description=($1), done=($2), important=($3) WHERE id=($4)',
+    [description, done, important, id],
     (err, res) => {
       if(err) return next(err);
       response.end('finished');
